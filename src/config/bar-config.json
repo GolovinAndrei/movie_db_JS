@@ -1,0 +1,10 @@
+{
+    "sections": [
+    {"title": "Home", "id": "movies-galery"},
+    {"title": "Search", "id": "search-form-place"},
+ 
+    {"title": "SignIn", "id": "signIn-form-place"},
+    {"title": "SignUp", "id": "signUp-form-place"}
+
+]
+}
