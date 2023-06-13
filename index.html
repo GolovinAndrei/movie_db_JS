@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="shortcut icon" href="images/fav.jpg" type="image/x-icon">
 </head>
 <body>
-    <section id="movie-details-place" class="movie-details-section" hidden>    
+    <section id="movie-details-place" class="movie-details-section" hidden>
+    </section>
+    <section id="signIn-form-place" class="movie-details-section" hidden>
+    </section>
+    <section id="signUp-form-place" class="movie-details-section" hidden>
     </section>
     <header class="main-header">
-        <section id="menu-place" class="menu-section">    
+        <h1>Movie hub</h1>
+        <section id="menu-place" class="menu-section">
         </section>
     </header>
+    <div id="spinner" hidden></div>
     <section id="movies-galery">
-            <div id="movies-galery-block"></div>
-            <div id="movies-galery-pagination"></div>
+        <div id="movies-galery-block"></div>
+        <div id="movies-galery-pagination"></div>
     </section>
-    <section id="search-form-place" class="search-form-section" hidden>    
+ 
+    <section id="account-place" class="account-section" hidden>
+        <h2>My favorite</h2>
+        <div id ="account-favorite-place"></div>
+        <h2>My watcing list</h2>
+        <div id ="account-watching-place"></div>
     </section>
-
-    <section id="signIn-form-place" class="movie-details-section" hidden>    
-    </section>
-    <section id="signUp-form-place" class="movie-details-section" hidden>    
+    <section id="search-form-place" class="search-form-section" hidden>
     </section>
     <script src="src/main.js" type="module"></script>
 </body>
+
 </html>

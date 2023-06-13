@@ -3,17 +3,14 @@ export default class Pagination{
     #parentElement;
     #callBackFn;
     #interval;
-    #currentIndex;
+    #currentElement;
     
-    //#totalPage;
-    #parentID;
-
 
     constructor(parentElement, callBackFn){
         this.#parentElement = parentElement
         this.#callBackFn = callBackFn;
         this.#interval = 10;
-        this.#currentIndex = 1;
+        
     }
 
     
@@ -21,8 +18,11 @@ export default class Pagination{
         this.#parentElement.innerHTML = `<div id="${this.#parentElement.id}-pages">${this.#getPages(totalPages, currentPage)}</div>`;
         const allPageNumbers = document.querySelectorAll('.page-number');
         allPageNumbers.forEach(e=>e.addEventListener("click", (event)=>{
-            const page = event.target.innerText;
-            this.#callBackFn(page);
+           // this.#currentElement.classList.remove('active');
+            const pageElement = event.target;
+            pageElement.classList.add('active');           
+            this.#currentElement = pageElement;
+            this.#callBackFn(pageElement.innerText);
          }));
 
          document.getElementById(`${this.#parentElement.id}-prev-id`).addEventListener('click', () => {
@@ -33,8 +33,6 @@ export default class Pagination{
             this.#callBackFn(++currentPage);
          })
 
-
-    
     }
 
      #getPages(totalPages, currentPage){
@@ -44,12 +42,9 @@ export default class Pagination{
         const firstIndex = startIndex > 1 ? `<a class="page-number">${1}</a>` : '';
         const previus = currentPage > 1 ? `<a id = "${this.#parentElement.id}-prev-id" class="page-number">Previus</a>` : 
                 `<a id = "${this.#parentElement.id}-prev-id" class="page-number"></a>`;
-                
-
-        
         const res = [];
             for (let i =startIndex; i<=finishIndex; i++){
-                res.push(`<a class="page-number">${i}</a>`)
+                res.push(`<a id="page-number-${i}" class="page-number">${i}</a>`)
         }
 
             return `${previus}
@@ -57,9 +52,6 @@ export default class Pagination{
                     ${res.join('')}
                     <a class="page-number">${totalPages}</a>
                     <a id = "${this.#parentElement.id}-next-id" class="page-number">Next</a>`;
-            
-            
-  
         }
 
 }

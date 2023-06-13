@@ -1,0 +1,16 @@
+{
+"favoriteColumns" : [
+    {"field": "title", "headerName": "Movie name"},
+    {"field": "release_date", "headerName": "Release date"},
+    {"field": "genres", "headerName": "Genres"},
+    {"field": "production_countries", "headerName": "Countries"},
+    {"field": "vote_average", "headerName": "Rating"},
+    {"field": "homepage", "headerName": "Home page"}
+],
+"watchingColumns" : [
+    {"field": "title", "headerName": "Movie name"},
+    {"field": "release_date", "headerName": "Release date"},
+    {"field": "status", "headerName": "Status"},
+    {"field": "overview", "headerName": "Overview"}
+]
+}
